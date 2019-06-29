@@ -1,6 +1,6 @@
 <!--heroes works!-->
 <!--显示英雄-->
-<!--{{hero1}}-->
+{{hero1}}
 <!--显示对象英雄-->
 <!--<h2>{{hero.name}} Details</h2>-->
 <!--格式化为大写：
@@ -16,4 +16,11 @@
     <input [(ngModel)]="hero.name" placeholder="name"/>
   </label>
 </div>
-
+<br>
+<!--数据回显：数组对象回显-->
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let hero2 of heroes">
+    <span class="badge">{{hero2.id}}</span> {{hero2.name}}
+  </li>
+</ul>
