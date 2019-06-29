@@ -72,3 +72,9 @@
     插值表达式 {{}}
     属性绑定 []
     事件绑定 ()
+   
+**7.创建主从组建:将英雄的详情移入一个独立的、可复用的 HeroDetailComponent**
+
+    1.生成新组件:ng generate component hero-detail
+
+    

@@ -28,15 +28,16 @@
   </li>
 </ul>
 <br>
-<!--选择英雄详情回显  -->
-<div *ngIf="selectedHero">
-
-  <h2>{{selectedHero.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{selectedHero.id}}</div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="selectedHero.name" placeholder="name"/>
-    </label>
-  </div>
-
-</div>
+<!--&lt;!&ndash;选择英雄详情回显  &ndash;&gt;-->
+<!--<div *ngIf="selectedHero">-->
+  <!--<h2>{{selectedHero.name | uppercase}} Details</h2>-->
+  <!--<div><span>id: </span>{{selectedHero.id}}</div>-->
+  <!--<div>-->
+    <!--<label>name:-->
+      <!--<input [(ngModel)]="selectedHero.name" placeholder="name"/>-->
+    <!--</label>-->
+  <!--</div>-->
+<!--</div>-->
+<!--使用单独组件进行详情回显-->
+<!--把 HeroesComponent.selectedHero 绑定到该元素的 hero 属性-->
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
