@@ -32,15 +32,35 @@
               font-family: Arial, Helvetica, sans-serif;
               font-size: 250%;
             }
-    4.文件介绍:
+**4.英雄组件：**
+
+    1.文件介绍:
           app.component.ts— 组件的类代码，这是用 TypeScript 写的。
           app.component.html— 组件的模板，这是用 HTML 写的。
-          app.component.css— 组件的私有 CSS 样式。           
-    5.创建英雄组件：
+          app.component.css— 组件的私有 CSS 样式。 
+    2.插值绑定语法：{{title}}
+        把组件ts文件中的属性值 绑定在 html 标签中          
+    3.创建英雄组件：生成4个文件
           -1.src/app/app.component.ts 
           -2.src/app/app.component.html
-          -3.src/styles.css (excerpt)
+          -3.src/styles.css (excerpt)   -->存放整个应用级别的样式
           ————————
           -4.cd src/app
           -5.创建heroes新组件：ng generate component heroes
-          -6.
+          
+**5.文件ts：**
+
+    import { Component, OnInit } from '@angular/core';//导入
+    @Component({    //@Component 是个装饰器函数，用于为该组件指定 Angular 所需的元数据
+      selector: 'app-heroes',//CSS 元素选择器 app-heroes 用来在父组件的模板中匹配 HTML 元素的名称，以识别出该组件。
+      templateUrl: './heroes.component.html',//模板文件位置
+      styleUrls: ['./heroes.component.css']//私有css文件位置
+    })
+    //始终要 export 这个组件类，以便在其它地方（比如 AppModule）导入它。
+    export class HeroesComponent implements OnInit {
+      constructor() { }
+      //ngOnInit 是一个生命周期钩子，Angular 在创建完组件后很快就会调用 ngOnInit。
+      //这里是放置初始化逻辑的好地方。
+      ngOnInit() {
+      }
+     }
