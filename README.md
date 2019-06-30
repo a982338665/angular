@@ -119,7 +119,9 @@
       如果你希望当 URL 为 localhost:4200/heroes 时，就导航到 HeroesComponent。
       首先要导入 HeroesComponent，以便能在 Route 中引用它。 然后定义一个路由数组，
       其中的某个路由是指向这个组件的。
-        
+    3.添加仪表盘视图：
+        1.ng generate component dashboard
+        2.
     
 
 
