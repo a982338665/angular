@@ -96,6 +96,14 @@
             constructor() { }
           }
     3.从组件中移除数据访问逻辑：实现方式写在service中
+    4.显示消息：
+        ·添加一个 MessagesComponent，它在屏幕的底部显示应用中的消息。
+        ·创建一个可注入的、全应用级别的 MessageService，用于发送要显示的消息。
+        ·把 MessageService 注入到 HeroService 中。
+        ·当 HeroService 成功获取了英雄数据时显示一条消息。
+        创建MessagesComponent：ng generate component messages
+        创建MessagesService：ng generate service message
+        
     
 
 
