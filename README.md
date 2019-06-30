@@ -76,5 +76,27 @@
 **7.创建主从组建:将英雄的详情移入一个独立的、可复用的 HeroDetailComponent**
 
     1.生成新组件:ng generate component hero-detail
+    2.父组件引用子组件并进行属性赋值
+    
+**8.服务：**
+
+    1.创建服务：ng generate service hero -> 该命令会在 src/app/hero.service.ts 中生成 HeroService 类的骨架
+    2.hero.service.ts文件内容：
+        import { Injectable } from '@angular/core';
+          //@Injectable() 装饰器会接受该服务的元数据对象，就像 @Component() 对组件类的作用一样。
+          //默认情况下，Angular CLI 命令 ng generate service 会通过给 @Injectable 
+          //装饰器添加元数据的形式，用根注入器将你的服务注册成为提供商。
+          //当你在顶层提供该服务时，Angular 就会为 HeroService 创建一个单一的、共享的实例，
+          //并把它注入到任何想要它的类上。
+          //在 @Injectable 元数据中注册该提供商，还能允许 Angular 通过移除那些完全没有用过的服务来进行优化。
+          @Injectable({ //@Injectable装饰器，把这个类标记为依赖注入系统的参与者之一
+            providedIn: 'root'
+          })
+          export class HeroService {
+            constructor() { }
+          }
+    3.从组件中移除数据访问逻辑：实现方式写在service中
+    
+
 
     
