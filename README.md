@@ -121,8 +121,18 @@
       其中的某个路由是指向这个组件的。
     3.添加仪表盘视图：
         1.ng generate component dashboard
-        2.
-    
+        
+**10.http：**
 
+    1.借助 Angular 的 HttpClient 来添加一些数据持久化特性。
+        HeroService 通过 HTTP 请求获取英雄数据。
+        用户可以添加、编辑和删除英雄，并通过 HTTP 来保存这些更改。
+        用户可以根据名字搜索英雄。
+    2.模拟安装内存服务端：
+        1.从 npm 中安装这个内存 Web API 包（译注：请使用 0.5+ 的版本，不要使用 0.4-）
+            npm install angular-in-memory-web-api --save
+        2.生成新文件替换原来模拟数据文件：InMemoryData -> mock-heroes.ts
+            ng generate service InMemoryData
+        3.
 
     
