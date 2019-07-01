@@ -16,6 +16,15 @@
     <!--<input [(ngModel)]="hero.name" placeholder="name"/>-->
   <!--</label>-->
 <!--</div>-->
+<div>
+  <label>Hero name:
+    <input #heroName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(heroName.value); heroName.value=''">
+    add
+  </button>
+</div>
 <br>
 <!--数据回显：数组对象回显-->
 <h2>My Heroes</h2>

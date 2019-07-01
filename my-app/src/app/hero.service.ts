@@ -70,6 +70,13 @@ export class HeroService {
       catchError(this.handleError<any>('updateHero'))
     );
   }
+  /** POST: add a new hero to the server */
+  addHero (hero: Hero): Observable<Hero> {
+    return this.http.post<Hero>(this.heroesUrl, hero, httpOptions).pipe(
+      tap((newHero: Hero) => this.log(`added hero w/ id=${newHero.id}`)),
+      catchError(this.handleError<Hero>('addHero'))
+    );
+  }
 
   //这是一个典型的“服务中的服务”场景： 你把 MessageService 注入到了 HeroService 中，
   // 而 HeroService 又被注入到了 HeroesComponent 中。
