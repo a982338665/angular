@@ -6,6 +6,10 @@ import {MessageService} from "./message.service";
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
+
 @Injectable({
   providedIn: 'root'
 })
@@ -48,6 +52,22 @@ export class HeroService {
     return this.http.get<Hero>(url).pipe(
       tap(_ => this.log(`fetched hero id=${id}`)),
       catchError(this.handleError<Hero>(`getHero id=${id}`))
+    );
+  }
+
+  //
+  /** PUT: update the hero on the server */
+  //HttpClient.put() 方法接受三个参数
+  // URL 地址
+  //   要修改的数据（这里就是修改后的英雄）
+  //   选项
+  //   options
+  // URL 没变。英雄 Web API 通过英雄对象的 id 就可以知道要修改哪个英雄。
+  // 英雄 Web API 期待在保存时的请求中有一个特殊的头。 这个头是在 HeroService 的 httpOptions 常量中定义的
+  updateHero (hero: Hero): Observable<any> {
+    return this.http.put(this.heroesUrl, hero, httpOptions).pipe(
+      tap(_ => this.log(`updated hero id=${hero.id}`)),
+      catchError(this.handleError<any>('updateHero'))
     );
   }
 

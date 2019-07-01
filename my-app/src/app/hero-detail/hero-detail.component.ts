@@ -40,4 +40,9 @@ export class HeroDetailComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
+  //添加如下的 save() 方法，它使用英雄服务中的 updateHero() 方法来保存对英雄名字的修改，然后导航回前一个视图。
+  save(): void {
+    this.heroService.updateHero(this.hero)
+      .subscribe(() => this.goBack());
+  }
 }
