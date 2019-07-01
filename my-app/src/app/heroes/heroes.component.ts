@@ -57,4 +57,11 @@ export class HeroesComponent implements OnInit {
         this.heroes.push(hero);
       });
   }
+  //如果你忘了调用 subscribe()，本服务将不会把这个删除请求发送给服务器。
+  // 作为一条通用的规则，Observable 在有人订阅之前什么都不会做。
+  // 你可以暂时删除 subscribe() 来确认这一点。点击“Dashboard”，然后点击“Heroes”，就又看到完整的英雄列表了。
+  delete(hero: Hero): void {
+    this.heroes = this.heroes.filter(h => h !== hero);
+    this.heroService.deleteHero(hero).subscribe();
+  }
 }

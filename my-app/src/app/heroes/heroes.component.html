@@ -11,14 +11,14 @@
 <!--<div><span>id: </span>{{hero.id}}</div>-->
 <!--&lt;!&ndash;数据回显 input  &ndash;&gt;-->
 <!--<div>-->
-  <!--<label>name:-->
-    <!--&lt;!&ndash;[(ngModel)] 是 Angular 的双向数据绑定语法。当内容改变时会发现h2标签中也会随之改变&ndash;&gt;-->
-    <!--<input [(ngModel)]="hero.name" placeholder="name"/>-->
-  <!--</label>-->
+<!--<label>name:-->
+<!--&lt;!&ndash;[(ngModel)] 是 Angular 的双向数据绑定语法。当内容改变时会发现h2标签中也会随之改变&ndash;&gt;-->
+<!--<input [(ngModel)]="hero.name" placeholder="name"/>-->
+<!--</label>-->
 <!--</div>-->
 <div>
   <label>Hero name:
-    <input #heroName />
+    <input #heroName/>
   </label>
   <!-- (click) passes input value to add() and then clears the input -->
   <button (click)="add(heroName.value); heroName.value=''">
@@ -34,18 +34,22 @@
     <a routerLink="/detail/{{hero2.id}}">
       <span class="badge">{{hero2.id}}</span> {{hero2.name}}
     </a>
+    <button class="delete" title="delete hero"
+            (click)="delete(hero2)">x
+    </button>
   </li>
+
 </ul>
 <br>
 <!--&lt;!&ndash;选择英雄详情回显  &ndash;&gt;-->
 <!--<div *ngIf="selectedHero">-->
-  <!--<h2>{{selectedHero.name | uppercase}} Details</h2>-->
-  <!--<div><span>id: </span>{{selectedHero.id}}</div>-->
-  <!--<div>-->
-    <!--<label>name:-->
-      <!--<input [(ngModel)]="selectedHero.name" placeholder="name"/>-->
-    <!--</label>-->
-  <!--</div>-->
+<!--<h2>{{selectedHero.name | uppercase}} Details</h2>-->
+<!--<div><span>id: </span>{{selectedHero.id}}</div>-->
+<!--<div>-->
+<!--<label>name:-->
+<!--<input [(ngModel)]="selectedHero.name" placeholder="name"/>-->
+<!--</label>-->
+<!--</div>-->
 <!--</div>-->
 <!--使用单独组件进行详情回显-->
 <!--把 HeroesComponent.selectedHero 绑定到该元素的 hero 属性-->
