@@ -135,4 +135,17 @@
             ng generate service InMemoryData
         3.
 
+**11.导入angular/node项目注意事项：**
+
+    1.git clone 项目
+    2.open 项目
+    3.设置项目为angular项目：
+        settings -->
+            【javascript】      --> ES6
+            【node.js and npm】 --> Enable 指定该项目
+    4.根据package.json生成npm包：重新导入后可在【node.js and npm】中查看
+        进入项目目录: npm install --production
+        或者
+        项目右键 -->  rebuild module 项目名 重新导入npm 包
+    5.【node.js and npm】中显示的有些包是全局npm包，若移除则等同于全局卸载
     
