@@ -21,10 +21,10 @@
 <h2>My Heroes</h2>
 <ul class="heroes">
   <!--click 外面的圆括号会让 Angular 监听这个 <li> 元素的 click 事件。 当用户点击 <li> 时，Angular 就会执行表达式 onSelect(hero)-->
-  <li *ngFor="let hero2 of heroes"
-      [class.selected]="hero2 === selectedHero"
-      (click)="onSelect(hero2)">
-    <span class="badge">{{hero2.id}}</span> {{hero2.name}}
+  <li *ngFor="let hero2 of heroes">
+    <a routerLink="/detail/{{hero2.id}}">
+      <span class="badge">{{hero2.id}}</span> {{hero2.name}}
+    </a>
   </li>
 </ul>
 <br>
@@ -40,4 +40,5 @@
 <!--</div>-->
 <!--使用单独组件进行详情回显-->
 <!--把 HeroesComponent.selectedHero 绑定到该元素的 hero 属性-->
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+<!--分离详情视图-->
+<!--<app-hero-detail [hero]="selectedHero"></app-hero-detail>-->
