@@ -148,4 +148,9 @@
         或者
         项目右键 -->  rebuild module 项目名 重新导入npm 包
     5.【node.js and npm】中显示的有些包是全局npm包，若移除则等同于全局卸载
+    6.当angular版本不匹配的时候：
+        全局移除
+        安装相对应的指定版本：npm install -g @angular/cli@1.5.2
+        
+
     
