@@ -143,14 +143,36 @@
         settings -->
             【javascript】      --> ES6
             【node.js and npm】 --> Enable 指定该项目
-    4.根据package.json生成npm包：重新导入后可在【node.js and npm】中查看
+    4.·根据package.json生成npm包：重新导入后可在【node.js and npm】中查看
         进入项目目录: npm install --production
-        或者
-        项目右键 -->  rebuild module 项目名 重新导入npm 包
+      ·根据package-lock.json文件生成npm包：
+        npm install
     5.【node.js and npm】中显示的有些包是全局npm包，若移除则等同于全局卸载
     6.当angular版本不匹配的时候：
         全局移除
         安装相对应的指定版本：npm install -g @angular/cli@7.2.0
         
+**12.package.json文件详解：**
+
+    npm install jquery --save     //---- 在dependencies  [项目正常运行依赖的包]  增加jquery
+    npm install jquery --save-dev   //-----在devDependencies  [开发测试依赖包]  增加jquery
+    npm uninstall jquery --save   //----删除dependencies  [项目依赖包]  中的jquery
+    npm uninstall jquery --save-dev   //-----删除devDependencies  [开发依赖包]  中的jquery
+    通过以上方式，别人在拉取代码后直接 npm install 就会安装所有依赖，不会缺少包
+    
+**13.npm install报错：python/gyp/node-sass**
+
+    0.cnpm uninstall node-sass(cnpm uninstall node-sass@1.7 可指定版本)
+    1.cnpm install node-sass@4.12.0（使用npm可能会失败）
+    2.cnpm install -g node-gyp
+    3.cnpm install --global --production windows-build-tools
+        （可能会由于网络原因连接失败）
+        （wifi 网络打不开，改用4G网络）
+        --> 如果不报错在等待中，需要进行手动安装后在执行
+            python-2.7.15.amd64.msi -->安装后要添加环境变量：
+                windows-cmd: path=%path%;C:\Python27
+            vs_BuildTools.exe --> 打开一下即可
+    final: npm install (他会优先安装：package-lock.json)
+      
 
     
