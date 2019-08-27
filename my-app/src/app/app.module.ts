@@ -12,6 +12,7 @@ import { HttpClientModule }    from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
+import { WebSocketComponent } from './web-socket/web-socket.component';
 //注意 AppModule 声明了应用中的所有组件，AppComponent 和 HeroesComponent。
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
     HeroDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    HeroSearchComponent
+    HeroSearchComponent,
+    WebSocketComponent
   ],
   imports: [
     BrowserModule,

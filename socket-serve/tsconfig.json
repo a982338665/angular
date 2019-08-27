@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    //编译输出js文件路径
+    "outDir": "build",
+    //  开发时用es6语法
+    "lib": [
+      "es6"
+    ]
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
