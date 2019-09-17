@@ -12,7 +12,7 @@ function getws() {
         ws.on('open', function open() {
             is_open = true;
             mqList.forEach(function (item,index) {
-                forword(item.receiveuser,item.msgbody)
+                forwordNew(item.receiveuser,item.msgbody,item.type)
             });
             mqList = [];
         });
@@ -39,4 +39,22 @@ function forword(receiveuser,msgbody){
 
 }
 
+
+function forwordNew(receiveuser,msgbody,type){
+    let ws = getws();
+    let data = {
+        "type":type,
+        "receiveuser":receiveuser,
+        "msgbody":msgbody
+    };
+    if(is_open){
+        let dataStr = JSON.stringify(data);
+        ws.send(dataStr);
+    }else{
+        mqList.push({"receiveuser":receiveuser,"msgbody":msgbody,"type":type})
+    }
+
+}
+
 exports.forword = forword;
+exports.forwordNew = forwordNew;
