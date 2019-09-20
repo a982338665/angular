@@ -7,6 +7,15 @@ import * as XLSX from 'xlsx';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+/**
+ * 1. 下载依赖：file-saver和xlsx
+*  npm install file-saver --save
+*  npm install @types/file-saver --save-dev
+*  npm install xlsx --save
+* 2. 在组件的ts文件中引入这两个依赖
+*   import * as FileSaver from 'file-saver';
+*   import * as XLSX from 'xlsx';
+ */
 export class AppComponent {
   title = 'Tour of Heroes';
   item = [{"编号":2,"name":'李生波',"content":"{'1':'2'}"},{"编号":2,"content":"{'1':'2'}"}];
